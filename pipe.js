@@ -1,6 +1,7 @@
 function Pipe(){
 	this.top=random(height/2);
-	this.bottom=this.top+80;
+	this.gap=100;
+	this.bottom=this.top+this.gap;
 	this.x=width;
 	this.w=20;
 	this.speed=2;
@@ -17,18 +18,16 @@ function Pipe(){
 	this.highlight=false;
 
 	this.hits=function(bird){
-		if(bird.y<this.top||bird.y>this.bottom){
-			if(bird.x>this.x&&bird.x<this.x+this.w){
-				this.highlight=true;
+		if(bird.y-16<this.top||bird.y+16>this.bottom){
+			if(bird.x+16>this.x&&!(bird.x-16>this.x+this.w)){
+				console.log("collision");
+				this.highlight=true; 
 				return true;
 			}
 		}
 		return false;
 	}
 
-	this.collision=function(){
-
-	}
 
 	this.update=function(){
 		this.x-=this.speed;
