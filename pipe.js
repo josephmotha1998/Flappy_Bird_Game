@@ -3,11 +3,11 @@ function Pipe(){
 	this.gap=100;
 	this.bottom=this.top+this.gap;
 	this.x=width;
-	this.w=20;
+	this.w=40;
 	this.speed=2;
 
 	this.show=function(){
-		fill(255);
+		fill(0,255,0);
 		if (this.highlight===true){
 			fill(255,0,0);
 		}
