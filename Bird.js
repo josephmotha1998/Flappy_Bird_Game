@@ -8,7 +8,7 @@ function Bird(){
 	this.lift=-15;
 	this.velocity=0;
 
-	this.brain=new NeuralNetwork(4,4,1);
+	this.brain= new NeuralNetwork();
 
 	this.show=function(){
 		fill(255,255,102);
